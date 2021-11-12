@@ -1,12 +1,21 @@
 
-const { host, protocol, hostname } = location;
-const localDocsUrl = `${protocol}//${host}/wu-kai.github.io/`;
-const docsUrl = hostname === 'localhost' ? localDocsUrl : '/';
+
 $('document').ready(function () {
-  console.log(marked );
-  $.get(`${docsUrl}docs/test/index.md`, function (d) {
+  jumpPage('collect', 'collect')
+});
+
+
+function jumpPage(url, id){
+  const { host, protocol, hostname } = location;
+  const localDocsUrl = `${protocol}//${host}/wu-kai.github.io/`;
+  const docsUrl = hostname === 'localhost' ? localDocsUrl : '/';
+  $.get(`${docsUrl}docs/${url}.md`, function (d) {
     console.log(d);
-    document.getElementById('content').innerHTML =
+    document.getElementById(id || 'content').innerHTML =
       marked.parse(d);
   })
-});
+}
+
+function closePage(){
+  document.getElementById('content').innerHTML = '';
+}
