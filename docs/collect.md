@@ -1,5 +1,8 @@
 ### JS
 - **ES6 入门教程** https://es6.ruanyifeng.com/
+
+###TypeScript
+- **TypeScript 入门教程** https://ts.xcatliu.com/introduction/index.html
 - **TypeScript中文文档** https://www.tslang.cn/docs/handbook/basic-types.html
 
 ### VUE
